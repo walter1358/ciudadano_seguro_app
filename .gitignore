@@ -1,0 +1,22 @@
+# Git ignore para Flutter/Dart
+# Flutter/Dart
+.dart_tool/
+.packages
+.pub/
+build/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Pods/
+*.iml
+.idea/
+.vscode/
+*.lock
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Claves o variables privadas
+*.env
+.env
+config/*.env
