@@ -1,9 +1,11 @@
 plugins {
     id("com.android.application")
+    id("com.google.gms.google-services")
     id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
+
+
 
 android {
     namespace = "com.example.ciudadano_seguro_app"
@@ -13,6 +15,8 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+        isCoreLibraryDesugaringEnabled = true 
+
     }
 
     kotlinOptions {
@@ -42,3 +46,20 @@ android {
 flutter {
     source = "../.."
 }
+
+
+dependencies {
+    // Firebase BOM (Bill of Materials) - maneja versiones automáticamente
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+    
+    // Firebase dependencies (sin especificar versión, usa BOM)
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-analytics")
+    
+    // Google Sign In
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
+
+}
+
