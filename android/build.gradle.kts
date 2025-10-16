@@ -1,9 +1,33 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.1.0")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0")
+        // Agregar Google Services para Firebase
+        classpath("com.google.gms:google-services:4.4.0")
+        // 👈 LÍNEA NECESARIA: Añadir la dependencia del Desugaring
+        classpath("com.android.tools:desugar_jdk_libs:2.0.4")         
+    }
+}
+
 allprojects {
     repositories {
         google()
         mavenCentral()
     }
 }
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
 
 val newBuildDir: Directory =
     rootProject.layout.buildDirectory
